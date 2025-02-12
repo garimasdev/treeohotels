@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" data-x="html" data-x-toggle="html-overflow-hidden">
 
@@ -12,8 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/vendors.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <link href="{% static 'css/vendors.css' %}" rel="stylesheet">
 
   <title>GoTrip</title>
 </head>
@@ -53,8 +54,8 @@
               </div>
 
               <a href="index.html" class="header-logo mr-20" data-x="header-logo" data-x-toggle="is-logo-dark">
-                <img src="img/general/logo-dark.svg" alt="logo icon">
-                <img src="img/general/logo-dark.svg" alt="logo icon">
+                <img src="static/images/general/logo-dark.svg" alt="logo icon">
+                <img src="static/images/general/logo-dark.svg" alt="logo icon">
               </a>
 
 
@@ -189,7 +190,7 @@
                                   </div>
 
                                   <div class="mega__image d-flex relative">
-                                    <img src="home-5.html#" data-src="img/backgrounds/7.png" alt="image" class="rounded-4 js-lazy">
+                                    <img src="home-5.html#" data-src="static/images/backgrounds/7.png" alt="image" class="rounded-4 js-lazy">
 
                                     <div class="absolute w-full h-full px-30 py-24">
                                       <div class="text-22 fw-500 lh-15 text-white">Things to do on <br> your trip</div>
@@ -228,7 +229,7 @@
                                   </div>
 
                                   <div class="mega__image d-flex relative">
-                                    <img src="img/backgrounds/7.png" alt="image" class="rounded-4">
+                                    <img src="static/images/backgrounds/7.png" alt="image" class="rounded-4">
 
                                     <div class="absolute w-full h-full px-30 py-24">
                                       <div class="text-22 fw-500 lh-15 text-white">Things to do on <br> your trip</div>
@@ -267,7 +268,7 @@
                                   </div>
 
                                   <div class="mega__image d-flex relative">
-                                    <img src="img/backgrounds/7.png" alt="image" class="rounded-4">
+                                    <img src="static/images/backgrounds/7.png" alt="image" class="rounded-4">
 
                                     <div class="absolute w-full h-full px-30 py-24">
                                       <div class="text-22 fw-500 lh-15 text-white">Things to do on <br> your trip</div>
@@ -306,7 +307,7 @@
                                   </div>
 
                                   <div class="mega__image d-flex relative">
-                                    <img src="img/backgrounds/7.png" alt="image" class="rounded-4">
+                                    <img src="static/images/backgrounds/7.png" alt="image" class="rounded-4">
 
                                     <div class="absolute w-full h-full px-30 py-24">
                                       <div class="text-22 fw-500 lh-15 text-white">Things to do on <br> your trip</div>
@@ -345,7 +346,7 @@
                                   </div>
 
                                   <div class="mega__image d-flex relative">
-                                    <img src="img/backgrounds/7.png" alt="image" class="rounded-4">
+                                    <img src="static/images/backgrounds/7.png" alt="image" class="rounded-4">
 
                                     <div class="absolute w-full h-full px-30 py-24">
                                       <div class="text-22 fw-500 lh-15 text-white">Things to do on <br> your trip</div>
@@ -384,7 +385,7 @@
                                   </div>
 
                                   <div class="mega__image d-flex relative">
-                                    <img src="img/backgrounds/7.png" alt="image" class="rounded-4">
+                                    <img src="static/images/backgrounds/7.png" alt="image" class="rounded-4">
 
                                     <div class="absolute w-full h-full px-30 py-24">
                                       <div class="text-22 fw-500 lh-15 text-white">Things to do on <br> your trip</div>
@@ -410,7 +411,7 @@
                                   </div>
 
                                   <div class="mega__image d-flex relative">
-                                    <img src="img/backgrounds/7.png" alt="image" class="rounded-4">
+                                    <img src="static/images/backgrounds/7.png" alt="image" class="rounded-4">
 
                                     <div class="absolute w-full h-full px-30 py-24">
                                       <div class="text-22 fw-500 lh-15 text-white">Things to do on <br> your trip</div>
@@ -1047,13 +1048,13 @@
 
     <section data-anim-wrap class="masthead -type-5">
       <div data-anim-child="fade" class="masthead__bg">
-        <img src="img/masthead/5/bg.svg" alt="image">
+        <img src="static/images/masthead/5/bg.svg" alt="image">
       </div>
 
       <div class="container">
         <div class="row">
           <div class="col-xl-9">
-            <h1 data-anim-child="slide-up delay-4" class="text-60 lg:text-40 md:text-30">Best Travel <span class="text-blue-1 relative">Experience <span class="-line"><img src="img/general/line.png" alt="image"></span></span></h1>
+            <h1 data-anim-child="slide-up delay-4" class="text-60 lg:text-40 md:text-30">Best Travel <span class="text-blue-1 relative">Experience <span class="-line"><img src="static/images/general/line.png" alt="image"></span></span></h1>
 
             <p data-anim-child="slide-up delay-5" class="mt-20">Experience the various exciting tour and travel packages and Make hotel reservations, find<br class="lg:d-none"> vacation packages, search cheap hotels and events</p>
 
@@ -1267,7 +1268,7 @@
       </div>
 
       <div data-anim-child="fade" class="masthead__image">
-        <img src="img/masthead/5/1.png" alt="image">
+        <img src="static/images/masthead/5/1.png" alt="image">
       </div>
     </section>
 
@@ -1301,7 +1302,7 @@
                   <div class="cardImage ratio ratio-1:1">
                     <div class="cardImage__content">
 
-                      <img class="rounded-4 col-12" src="img/tours/1.png" alt="image">
+                      <img class="rounded-4 col-12" src="static/images/tours/1.png" alt="image">
 
 
                     </div>
@@ -1382,15 +1383,15 @@
                         <div class="swiper-wrapper">
 
                           <div class="swiper-slide">
-                            <img class="col-12" src="img/tours/2.png" alt="image">
+                            <img class="col-12" src="static/images/tours/2.png" alt="image">
                           </div>
 
                           <div class="swiper-slide">
-                            <img class="col-12" src="img/tours/1.png" alt="image">
+                            <img class="col-12" src="static/images/tours/1.png" alt="image">
                           </div>
 
                           <div class="swiper-slide">
-                            <img class="col-12" src="img/tours/3.png" alt="image">
+                            <img class="col-12" src="static/images/tours/3.png" alt="image">
                           </div>
 
                         </div>
@@ -1477,7 +1478,7 @@
                   <div class="cardImage ratio ratio-1:1">
                     <div class="cardImage__content">
 
-                      <img class="rounded-4 col-12" src="img/tours/3.png" alt="image">
+                      <img class="rounded-4 col-12" src="static/images/tours/3.png" alt="image">
 
 
                     </div>
@@ -1553,7 +1554,7 @@
                   <div class="cardImage ratio ratio-1:1">
                     <div class="cardImage__content">
 
-                      <img class="rounded-4 col-12" src="img/tours/4.png" alt="image">
+                      <img class="rounded-4 col-12" src="static/images/tours/4.png" alt="image">
 
 
                     </div>
@@ -1809,7 +1810,7 @@
               <div class="row x-gap-20 y-gap-20 items-center">
                 <div class="col-auto">
                   <div class="destCard__image rounded-4">
-                    <img class="size-100 rounded-4" src="img/cities/1/1.png" alt="image" class="size-100 rounded-4">
+                    <img class="size-100 rounded-4" src="static/images/cities/1/1.png" alt="image" class="size-100 rounded-4">
                   </div>
                 </div>
 
@@ -1826,7 +1827,7 @@
               <div class="row x-gap-20 y-gap-20 items-center">
                 <div class="col-auto">
                   <div class="destCard__image rounded-4">
-                    <img class="size-100 rounded-4" src="img/cities/1/2.png" alt="image" class="size-100 rounded-4">
+                    <img class="size-100 rounded-4" src="static/images/cities/1/2.png" alt="image" class="size-100 rounded-4">
                   </div>
                 </div>
 
@@ -1843,7 +1844,7 @@
               <div class="row x-gap-20 y-gap-20 items-center">
                 <div class="col-auto">
                   <div class="destCard__image rounded-4">
-                    <img class="size-100 rounded-4" src="img/cities/1/3.png" alt="image" class="size-100 rounded-4">
+                    <img class="size-100 rounded-4" src="static/images/cities/1/3.png" alt="image" class="size-100 rounded-4">
                   </div>
                 </div>
 
@@ -1860,7 +1861,7 @@
               <div class="row x-gap-20 y-gap-20 items-center">
                 <div class="col-auto">
                   <div class="destCard__image rounded-4">
-                    <img class="size-100 rounded-4" src="img/cities/1/4.png" alt="image" class="size-100 rounded-4">
+                    <img class="size-100 rounded-4" src="static/images/cities/1/4.png" alt="image" class="size-100 rounded-4">
                   </div>
                 </div>
 
@@ -1877,7 +1878,7 @@
               <div class="row x-gap-20 y-gap-20 items-center">
                 <div class="col-auto">
                   <div class="destCard__image rounded-4">
-                    <img class="size-100 rounded-4" src="img/cities/1/5.png" alt="image" class="size-100 rounded-4">
+                    <img class="size-100 rounded-4" src="static/images/cities/1/5.png" alt="image" class="size-100 rounded-4">
                   </div>
                 </div>
 
@@ -1894,7 +1895,7 @@
               <div class="row x-gap-20 y-gap-20 items-center">
                 <div class="col-auto">
                   <div class="destCard__image rounded-4">
-                    <img class="size-100 rounded-4" src="img/cities/1/6.png" alt="image" class="size-100 rounded-4">
+                    <img class="size-100 rounded-4" src="static/images/cities/1/6.png" alt="image" class="size-100 rounded-4">
                   </div>
                 </div>
 
@@ -1911,7 +1912,7 @@
               <div class="row x-gap-20 y-gap-20 items-center">
                 <div class="col-auto">
                   <div class="destCard__image rounded-4">
-                    <img class="size-100 rounded-4" src="img/cities/1/7.png" alt="image" class="size-100 rounded-4">
+                    <img class="size-100 rounded-4" src="static/images/cities/1/7.png" alt="image" class="size-100 rounded-4">
                   </div>
                 </div>
 
@@ -1928,7 +1929,7 @@
               <div class="row x-gap-20 y-gap-20 items-center">
                 <div class="col-auto">
                   <div class="destCard__image rounded-4">
-                    <img class="size-100 rounded-4" src="img/cities/1/8.png" alt="image" class="size-100 rounded-4">
+                    <img class="size-100 rounded-4" src="static/images/cities/1/8.png" alt="image" class="size-100 rounded-4">
                   </div>
                 </div>
 
@@ -1982,7 +1983,7 @@
 
             <div class="ctaCard -type-1 rounded-4 ">
               <div class="ctaCard__image ratio ratio-63:55">
-                <img class="img-ratio js-lazy" src="home-5.html#" data-src="img/backgrounds/6.png" alt="image">
+                <img class="img-ratio js-lazy" src="home-5.html#" data-src="static/images/backgrounds/6.png" alt="image">
               </div>
 
               <div class="ctaCard__content py-50 px-50 lg:py-30 lg:px-30">
@@ -2012,7 +2013,7 @@
                       <div class="cardImage ratio ratio-1:1">
                         <div class="cardImage__content">
 
-                          <img class="rounded-4 col-12" src="img/tours/1.png" alt="image">
+                          <img class="rounded-4 col-12" src="static/images/tours/1.png" alt="image">
 
 
                         </div>
@@ -2093,15 +2094,15 @@
                             <div class="swiper-wrapper">
 
                               <div class="swiper-slide">
-                                <img class="col-12" src="img/tours/2.png" alt="image">
+                                <img class="col-12" src="static/images/tours/2.png" alt="image">
                               </div>
 
                               <div class="swiper-slide">
-                                <img class="col-12" src="img/tours/1.png" alt="image">
+                                <img class="col-12" src="static/images/tours/1.png" alt="image">
                               </div>
 
                               <div class="swiper-slide">
-                                <img class="col-12" src="img/tours/3.png" alt="image">
+                                <img class="col-12" src="static/images/tours/3.png" alt="image">
                               </div>
 
                             </div>
@@ -2188,7 +2189,7 @@
                       <div class="cardImage ratio ratio-1:1">
                         <div class="cardImage__content">
 
-                          <img class="rounded-4 col-12" src="img/tours/3.png" alt="image">
+                          <img class="rounded-4 col-12" src="static/images/tours/3.png" alt="image">
 
 
                         </div>
@@ -2293,7 +2294,7 @@
 
     <section class="section-bg layout-pt-lg md:pt-0 md:pb-60 sm:pb-40 layout-pb-lg bg-blue-1-05">
       <div class="section-bg__item -right -image col-5 md:mb-60 sm:mb-40">
-        <img src="img/backgrounds/5.png" alt="image">
+        <img src="static/images/backgrounds/5.png" alt="image">
       </div>
 
       <div class="container">
@@ -2306,7 +2307,7 @@
 
               <div class="col-12">
                 <div class="d-flex pr-30">
-                  <img class="size-50" src="img/featureIcons/1/1.svg" alt="image">
+                  <img class="size-50" src="static/images/featureIcons/1/1.svg" alt="image">
 
                   <div class="ml-15">
                     <h4 class="text-18 fw-500">Best Price Guarantee</h4>
@@ -2317,7 +2318,7 @@
 
               <div class="col-12">
                 <div class="d-flex pr-30">
-                  <img class="size-50" src="img/featureIcons/1/2.svg" alt="image">
+                  <img class="size-50" src="static/images/featureIcons/1/2.svg" alt="image">
 
                   <div class="ml-15">
                     <h4 class="text-18 fw-500">Easy & Quick Booking</h4>
@@ -2328,7 +2329,7 @@
 
               <div class="col-12">
                 <div class="d-flex pr-30">
-                  <img class="size-50" src="img/featureIcons/1/3.svg" alt="image">
+                  <img class="size-50" src="static/images/featureIcons/1/3.svg" alt="image">
 
                   <div class="ml-15">
                     <h4 class="text-18 fw-500">Customer Care 24/7</h4>
@@ -2345,7 +2346,7 @@
 
     <section class="section-bg layout-pt-lg layout-pb-md">
       <div class="section-bg__item col-12">
-        <img src="img/backgrounds/testimonials/bg.png" alt="image">
+        <img src="static/images/backgrounds/testimonials/bg.png" alt="image">
       </div>
 
       <div data-anim="slide-up delay-1" class="container">
@@ -2367,8 +2368,8 @@
                 <div class="swiper-slide">
                   <div class="testimonials -type-2 text-center">
                     <div class="testimonials__image mb-24 md:mb-20">
-                      <img src="img/testimonials/2/quote.svg" alt="quote">
-                      <img src="img/testimonials/2/1.png" alt="quote">
+                      <img src="static/images/testimonials/2/quote.svg" alt="quote">
+                      <img src="static/images/testimonials/2/1.png" alt="quote">
                     </div>
 
                     <h4 class="text-16 fw-500 text-blue-1">Hotel Equatorial Melaka</h4>
@@ -2384,8 +2385,8 @@
                 <div class="swiper-slide">
                   <div class="testimonials -type-2 text-center">
                     <div class="testimonials__image mb-24 md:mb-20">
-                      <img src="img/testimonials/2/quote.svg" alt="quote">
-                      <img src="img/testimonials/2/2.png" alt="quote">
+                      <img src="static/images/testimonials/2/quote.svg" alt="quote">
+                      <img src="static/images/testimonials/2/2.png" alt="quote">
                     </div>
 
                     <h4 class="text-16 fw-500 text-blue-1">Hotel Equatorial Melaka</h4>
@@ -2401,8 +2402,8 @@
                 <div class="swiper-slide">
                   <div class="testimonials -type-2 text-center">
                     <div class="testimonials__image mb-24 md:mb-20">
-                      <img src="img/testimonials/2/quote.svg" alt="quote">
-                      <img src="img/testimonials/2/3.png" alt="quote">
+                      <img src="static/images/testimonials/2/quote.svg" alt="quote">
+                      <img src="static/images/testimonials/2/3.png" alt="quote">
                     </div>
 
                     <h4 class="text-16 fw-500 text-blue-1">Hotel Equatorial Melaka</h4>
@@ -2418,8 +2419,8 @@
                 <div class="swiper-slide">
                   <div class="testimonials -type-2 text-center">
                     <div class="testimonials__image mb-24 md:mb-20">
-                      <img src="img/testimonials/2/quote.svg" alt="quote">
-                      <img src="img/testimonials/2/4.png" alt="quote">
+                      <img src="static/images/testimonials/2/quote.svg" alt="quote">
+                      <img src="static/images/testimonials/2/4.png" alt="quote">
                     </div>
 
                     <h4 class="text-16 fw-500 text-blue-1">Hotel Equatorial Melaka</h4>
@@ -2435,8 +2436,8 @@
                 <div class="swiper-slide">
                   <div class="testimonials -type-2 text-center">
                     <div class="testimonials__image mb-24 md:mb-20">
-                      <img src="img/testimonials/2/quote.svg" alt="quote">
-                      <img src="img/testimonials/2/5.png" alt="quote">
+                      <img src="static/images/testimonials/2/quote.svg" alt="quote">
+                      <img src="static/images/testimonials/2/5.png" alt="quote">
                     </div>
 
                     <h4 class="text-16 fw-500 text-blue-1">Hotel Equatorial Melaka</h4>
@@ -2489,37 +2490,37 @@
 
           <div class="col-md-auto col-6">
             <div class="d-flex justify-center">
-              <img src="img/clients/1.svg" alt="image">
+              <img src="static/images/clients/1.svg" alt="image">
             </div>
           </div>
 
           <div class="col-md-auto col-6">
             <div class="d-flex justify-center">
-              <img src="img/clients/2.svg" alt="image">
+              <img src="static/images/clients/2.svg" alt="image">
             </div>
           </div>
 
           <div class="col-md-auto col-6">
             <div class="d-flex justify-center">
-              <img src="img/clients/3.svg" alt="image">
+              <img src="static/images/clients/3.svg" alt="image">
             </div>
           </div>
 
           <div class="col-md-auto col-6">
             <div class="d-flex justify-center">
-              <img src="img/clients/4.svg" alt="image">
+              <img src="static/images/clients/4.svg" alt="image">
             </div>
           </div>
 
           <div class="col-md-auto col-6">
             <div class="d-flex justify-center">
-              <img src="img/clients/5.svg" alt="image">
+              <img src="static/images/clients/5.svg" alt="image">
             </div>
           </div>
 
           <div class="col-md-auto col-6">
             <div class="d-flex justify-center">
-              <img src="img/clients/6.svg" alt="image">
+              <img src="static/images/clients/6.svg" alt="image">
             </div>
           </div>
 
@@ -2545,7 +2546,7 @@
             <a href="home-5.html" class="blogCard -type-1 d-block ">
               <div class="blogCard__image">
                 <div class="ratio ratio-4:3 rounded-4 rounded-8">
-                  <img class="img-ratio js-lazy" src="home-5.html#" data-src="img/blog/1.png" alt="image">
+                  <img class="img-ratio js-lazy" src="home-5.html#" data-src="static/images/blog/1.png" alt="image">
                 </div>
               </div>
 
@@ -2562,7 +2563,7 @@
             <a href="home-5.html" class="blogCard -type-1 d-block ">
               <div class="blogCard__image">
                 <div class="ratio ratio-4:3 rounded-4 rounded-8">
-                  <img class="img-ratio js-lazy" src="home-5.html#" data-src="img/blog/2.png" alt="image">
+                  <img class="img-ratio js-lazy" src="home-5.html#" data-src="static/images/blog/2.png" alt="image">
                 </div>
               </div>
 
@@ -2579,7 +2580,7 @@
             <a href="home-5.html" class="blogCard -type-1 d-block ">
               <div class="blogCard__image">
                 <div class="ratio ratio-4:3 rounded-4 rounded-8">
-                  <img class="img-ratio js-lazy" src="home-5.html#" data-src="img/blog/3.png" alt="image">
+                  <img class="img-ratio js-lazy" src="home-5.html#" data-src="static/images/blog/3.png" alt="image">
                 </div>
               </div>
 
@@ -2631,7 +2632,7 @@
         <div class="pt-60 pb-60">
           <div class="row y-gap-40 justify-between xl:justify-start">
             <div class="col-xl-4 col-lg-6">
-              <img src="img/general/logo-light.svg" alt="image">
+              <img src="static/images/general/logo-light.svg" alt="image">
 
               <div class="row y-gap-30 justify-between pt-30">
                 <div class="col-sm-6">
@@ -3791,7 +3792,7 @@
             <div class="row x-gap-20 y-gap-20">
               <div class="col-md-auto">
                 <div class="ratio ratio-1:1 size-120">
-                  <img src="img/hotels/1.png" alt="image" class="img-ratio rounded-4">
+                  <img src="static/images/hotels/1.png" alt="image" class="img-ratio rounded-4">
                 </div>
               </div>
 
@@ -3846,7 +3847,7 @@
             <div class="row x-gap-20 y-gap-20">
               <div class="col-md-auto">
                 <div class="ratio ratio-1:1 size-120">
-                  <img src="img/hotels/1.png" alt="image" class="img-ratio rounded-4">
+                  <img src="static/images/hotels/1.png" alt="image" class="img-ratio rounded-4">
                 </div>
               </div>
 
@@ -3901,7 +3902,7 @@
             <div class="row x-gap-20 y-gap-20">
               <div class="col-md-auto">
                 <div class="ratio ratio-1:1 size-120">
-                  <img src="img/hotels/1.png" alt="image" class="img-ratio rounded-4">
+                  <img src="static/images/hotels/1.png" alt="image" class="img-ratio rounded-4">
                 </div>
               </div>
 
@@ -3956,7 +3957,7 @@
             <div class="row x-gap-20 y-gap-20">
               <div class="col-md-auto">
                 <div class="ratio ratio-1:1 size-120">
-                  <img src="img/hotels/1.png" alt="image" class="img-ratio rounded-4">
+                  <img src="static/images/hotels/1.png" alt="image" class="img-ratio rounded-4">
                 </div>
               </div>
 
@@ -4011,7 +4012,7 @@
             <div class="row x-gap-20 y-gap-20">
               <div class="col-md-auto">
                 <div class="ratio ratio-1:1 size-120">
-                  <img src="img/hotels/1.png" alt="image" class="img-ratio rounded-4">
+                  <img src="static/images/hotels/1.png" alt="image" class="img-ratio rounded-4">
                 </div>
               </div>
 
@@ -4066,7 +4067,7 @@
             <div class="row x-gap-20 y-gap-20">
               <div class="col-md-auto">
                 <div class="ratio ratio-1:1 size-120">
-                  <img src="img/hotels/1.png" alt="image" class="img-ratio rounded-4">
+                  <img src="static/images/hotels/1.png" alt="image" class="img-ratio rounded-4">
                 </div>
               </div>
 
@@ -4121,7 +4122,7 @@
             <div class="row x-gap-20 y-gap-20">
               <div class="col-md-auto">
                 <div class="ratio ratio-1:1 size-120">
-                  <img src="img/hotels/1.png" alt="image" class="img-ratio rounded-4">
+                  <img src="static/images/hotels/1.png" alt="image" class="img-ratio rounded-4">
                 </div>
               </div>
 
@@ -4185,8 +4186,8 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM"></script>
   <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
 
-  <script src="js/vendors.js"></script>
-  <script src="js/main.js"></script>
+  <script src="{% static 'js/vendors.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>

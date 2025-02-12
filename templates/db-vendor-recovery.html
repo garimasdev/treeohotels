@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,8 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/vendors.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <link href="{% static 'css/vendors.css' %}" rel="stylesheet">
 
   <title>GoTrip</title>
 </head>
@@ -47,8 +48,8 @@
     <div data-anim="fade" class="header__container px-30 sm:px-20">
       <div class="-left-side">
         <a href="index.html" class="header-logo" data-x="header-logo" data-x-toggle="is-logo-dark">
-          <img src="img/general/logo-dark.svg" alt="logo icon">
-          <img src="img/general/logo-dark.svg" alt="logo icon">
+          <img src="static/images/general/logo-dark.svg" alt="logo icon">
+          <img src="static/images/general/logo-dark.svg" alt="logo icon">
         </a>
       </div>
 
@@ -202,7 +203,7 @@
                                 </div>
 
                                 <div class="mega__image d-flex relative">
-                                  <img src="db-vendor-recovery.html#" data-src="img/backgrounds/7.png" alt="image" class="rounded-4 js-lazy">
+                                  <img src="db-vendor-recovery.html#" data-src="static/images/backgrounds/7.png" alt="image" class="rounded-4 js-lazy">
 
                                   <div class="absolute w-full h-full px-30 py-24">
                                     <div class="text-22 fw-500 lh-15 text-white">Things to do on <br> your trip</div>
@@ -241,7 +242,7 @@
                                 </div>
 
                                 <div class="mega__image d-flex relative">
-                                  <img src="img/backgrounds/7.png" alt="image" class="rounded-4">
+                                  <img src="static/images/backgrounds/7.png" alt="image" class="rounded-4">
 
                                   <div class="absolute w-full h-full px-30 py-24">
                                     <div class="text-22 fw-500 lh-15 text-white">Things to do on <br> your trip</div>
@@ -280,7 +281,7 @@
                                 </div>
 
                                 <div class="mega__image d-flex relative">
-                                  <img src="img/backgrounds/7.png" alt="image" class="rounded-4">
+                                  <img src="static/images/backgrounds/7.png" alt="image" class="rounded-4">
 
                                   <div class="absolute w-full h-full px-30 py-24">
                                     <div class="text-22 fw-500 lh-15 text-white">Things to do on <br> your trip</div>
@@ -319,7 +320,7 @@
                                 </div>
 
                                 <div class="mega__image d-flex relative">
-                                  <img src="img/backgrounds/7.png" alt="image" class="rounded-4">
+                                  <img src="static/images/backgrounds/7.png" alt="image" class="rounded-4">
 
                                   <div class="absolute w-full h-full px-30 py-24">
                                     <div class="text-22 fw-500 lh-15 text-white">Things to do on <br> your trip</div>
@@ -358,7 +359,7 @@
                                 </div>
 
                                 <div class="mega__image d-flex relative">
-                                  <img src="img/backgrounds/7.png" alt="image" class="rounded-4">
+                                  <img src="static/images/backgrounds/7.png" alt="image" class="rounded-4">
 
                                   <div class="absolute w-full h-full px-30 py-24">
                                     <div class="text-22 fw-500 lh-15 text-white">Things to do on <br> your trip</div>
@@ -397,7 +398,7 @@
                                 </div>
 
                                 <div class="mega__image d-flex relative">
-                                  <img src="img/backgrounds/7.png" alt="image" class="rounded-4">
+                                  <img src="static/images/backgrounds/7.png" alt="image" class="rounded-4">
 
                                   <div class="absolute w-full h-full px-30 py-24">
                                     <div class="text-22 fw-500 lh-15 text-white">Things to do on <br> your trip</div>
@@ -423,7 +424,7 @@
                                 </div>
 
                                 <div class="mega__image d-flex relative">
-                                  <img src="img/backgrounds/7.png" alt="image" class="rounded-4">
+                                  <img src="static/images/backgrounds/7.png" alt="image" class="rounded-4">
 
                                   <div class="absolute w-full h-full px-30 py-24">
                                     <div class="text-22 fw-500 lh-15 text-white">Things to do on <br> your trip</div>
@@ -721,7 +722,7 @@
             </div>
 
             <div class="pl-15">
-              <img src="img/avatars/3.png" alt="image" class="size-50 rounded-22 object-cover">
+              <img src="static/images/avatars/3.png" alt="image" class="size-50 rounded-22 object-cover">
             </div>
 
             <div class="d-none xl:d-flex x-gap-20 items-center pl-20" data-x="header-mobile-icons" data-x-toggle="text-white">
@@ -743,7 +744,7 @@
 
 
           <a href="db-dashboard.html" class="sidebar__button d-flex items-center text-15 lh-1 fw-500">
-            <img src="img/dashboard/sidebar/compass.svg" alt="image" class="mr-15">
+            <img src="static/images/dashboard/sidebar/compass.svg" alt="image" class="mr-15">
             Dashboard
           </a>
 
@@ -754,7 +755,7 @@
 
 
           <a href="db-vendor-recovery.html#" class="sidebar__button d-flex items-center text-15 lh-1 fw-500">
-            <img src="img/dashboard/sidebar/booking.svg" alt="image" class="mr-15">
+            <img src="static/images/dashboard/sidebar/booking.svg" alt="image" class="mr-15">
             Booking Manager
           </a>
 
@@ -769,7 +770,7 @@
               <div class="accordion__button">
                 <div class="sidebar__button col-12 d-flex items-center justify-between">
                   <div class="d-flex items-center text-15 lh-1 fw-500">
-                    <img src="img/dashboard/sidebar/hotel.svg" alt="image" class="mr-10">
+                    <img src="static/images/dashboard/sidebar/hotel.svg" alt="image" class="mr-10">
                     Manage Hotel
                   </div>
                   <div class="icon-chevron-sm-down text-7"></div>
@@ -807,7 +808,7 @@
               <div class="accordion__button">
                 <div class="sidebar__button col-12 d-flex items-center justify-between">
                   <div class="d-flex items-center text-15 lh-1 fw-500">
-                    <img src="img/dashboard/sidebar/map.svg" alt="image" class="mr-10">
+                    <img src="static/images/dashboard/sidebar/map.svg" alt="image" class="mr-10">
                     Manage Tour
                   </div>
                   <div class="icon-chevron-sm-down text-7"></div>
@@ -845,7 +846,7 @@
               <div class="accordion__button">
                 <div class="sidebar__button col-12 d-flex items-center justify-between">
                   <div class="d-flex items-center text-15 lh-1 fw-500">
-                    <img src="img/dashboard/sidebar/sneakers.svg" alt="image" class="mr-10">
+                    <img src="static/images/dashboard/sidebar/sneakers.svg" alt="image" class="mr-10">
                     Manage Activity
                   </div>
                   <div class="icon-chevron-sm-down text-7"></div>
@@ -883,7 +884,7 @@
               <div class="accordion__button">
                 <div class="sidebar__button col-12 d-flex items-center justify-between">
                   <div class="d-flex items-center text-15 lh-1 fw-500">
-                    <img src="img/dashboard/sidebar/house.svg" alt="image" class="mr-10">
+                    <img src="static/images/dashboard/sidebar/house.svg" alt="image" class="mr-10">
                     Manage Holiday Rental
                   </div>
                   <div class="icon-chevron-sm-down text-7"></div>
@@ -921,7 +922,7 @@
               <div class="accordion__button">
                 <div class="sidebar__button col-12 d-flex items-center justify-between">
                   <div class="d-flex items-center text-15 lh-1 fw-500">
-                    <img src="img/dashboard/sidebar/taxi.svg" alt="image" class="mr-10">
+                    <img src="static/images/dashboard/sidebar/taxi.svg" alt="image" class="mr-10">
                     Manage Car
                   </div>
                   <div class="icon-chevron-sm-down text-7"></div>
@@ -959,7 +960,7 @@
               <div class="accordion__button">
                 <div class="sidebar__button col-12 d-flex items-center justify-between">
                   <div class="d-flex items-center text-15 lh-1 fw-500">
-                    <img src="img/dashboard/sidebar/canoe.svg" alt="image" class="mr-10">
+                    <img src="static/images/dashboard/sidebar/canoe.svg" alt="image" class="mr-10">
                     Manage Cruise
                   </div>
                   <div class="icon-chevron-sm-down text-7"></div>
@@ -997,7 +998,7 @@
               <div class="accordion__button">
                 <div class="sidebar__button col-12 d-flex items-center justify-between">
                   <div class="d-flex items-center text-15 lh-1 fw-500">
-                    <img src="img/dashboard/sidebar/airplane.svg" alt="image" class="mr-10">
+                    <img src="static/images/dashboard/sidebar/airplane.svg" alt="image" class="mr-10">
                     Manage Flights
                   </div>
                   <div class="icon-chevron-sm-down text-7"></div>
@@ -1031,7 +1032,7 @@
 
 
           <a href="db-vendor-recovery.html#" class="sidebar__button d-flex items-center text-15 lh-1 fw-500">
-            <img src="img/dashboard/sidebar/log-out.svg" alt="image" class="mr-15">
+            <img src="static/images/dashboard/sidebar/log-out.svg" alt="image" class="mr-15">
             Logout
           </a>
 
@@ -1558,8 +1559,8 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM"></script>
   <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
 
-  <script src="js/vendors.js"></script>
-  <script src="js/main.js"></script>
+  <script src="{% static 'js/vendors.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>
