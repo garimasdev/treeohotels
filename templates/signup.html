@@ -744,18 +744,19 @@
               <div class="row y-gap-20">
                 <div class="col-12">
                   <h1 class="text-22 fw-500">Sign in or create an account</h1>
-                  <p class="mt-10">Already have an account? <a href="signup.html#" class="text-blue-1">Log in</a></p>
+                  <p class="mt-10">Already have an account? <a href="{% url 'login' %}" class="text-blue-1">Log in</a></p>
                 </div>
 
                 <form method="POST" action="{% url 'signup' %}">
                   {% csrf_token %}
-                  <div class="col-12">
 
+                  <input type="hidden" name="role" value="{{ request.GET.role }}">
+
+                  <div class="col-12">
                     <div class="form-input ">
                       <input type="text" name="full_name" required>
                       <label class="lh-1 text-14 text-light-1">Full Name</label>
                     </div>
-
                   </div>
 
                   <div class="col-12">
@@ -825,11 +826,15 @@
                     </div>
                   </div> -->
                   
-                  <div class="col-12">
-                    <!-- <button class="button py-20 -dark-1 bg-blue-1 text-white">Sign In</button> -->
+                  <!-- <div class="col-12">
                     <a class="button py-20 -dark-1 bg-blue-1 text-white">
                       Sign In <div class="icon-arrow-top-right ml-15"></div>
                     </a>
+                  </div> -->
+                  <div class="col-12">
+                    <button type="submit" class="button py-20 -dark-1 bg-blue-1 text-white" style="width: 100%;">
+                      Sign Up <div class="icon-arrow-top-right ml-15"></div>
+                    </button>
                   </div>
                 </div>
               </form>
@@ -856,7 +861,7 @@
                 </div>
 
                 <div class="col-12">
-                  <div class="text-center px-30">By signing in, I agree to GoTrip Terms of Use and Privacy Policy.</div>
+                  <div class="text-center px-30">By signing in, I agree to TreeoHotels Terms of Use and Privacy Policy.</div>
                 </div>
               </div>
             </div>

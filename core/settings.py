@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'users',
     'tours',
     'bookings',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
+
+
+LOGIN_URL = '/users/login/'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 
 # Database
