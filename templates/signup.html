@@ -720,7 +720,7 @@
 
 
               <div class="d-flex items-center ml-20 is-menu-opened-hide md:d-none">
-                <a href="login.html" class="button px-30 fw-400 text-14 -blue-1 bg-blue-1 h-50 text-white">Become An Expert</a>
+                <!-- <a href="login.html" class="button px-30 fw-400 text-14 -blue-1 bg-blue-1 h-50 text-white">Become An Expert</a> -->
                 <a href="signup.html" class="button px-30 fw-400 text-14 -outline-blue-1 h-50 text-blue-1 ml-20">Sign In / Register</a>
               </div>
 
@@ -747,87 +747,105 @@
                   <p class="mt-10">Already have an account? <a href="signup.html#" class="text-blue-1">Log in</a></p>
                 </div>
 
-                <div class="col-12">
+                <form method="POST" action="{% url 'signup' %}">
+                  {% csrf_token %}
+                  <div class="col-12">
 
-                  <div class="form-input ">
-                    <input type="text" required>
-                    <label class="lh-1 text-14 text-light-1">First Name</label>
-                  </div>
-
-                </div>
-
-                <div class="col-12">
-
-                  <div class="form-input ">
-                    <input type="text" required>
-                    <label class="lh-1 text-14 text-light-1">Last Name</label>
-                  </div>
-
-                </div>
-
-                <div class="col-12">
-
-                  <div class="form-input ">
-                    <input type="text" required>
-                    <label class="lh-1 text-14 text-light-1">Email</label>
-                  </div>
-
-                </div>
-
-                <div class="col-12">
-
-                  <div class="form-input ">
-                    <input type="password" required>
-                    <label class="lh-1 text-14 text-light-1">Password</label>
-                  </div>
-
-                </div>
-
-                <div class="col-12">
-
-                  <div class="form-input ">
-                    <input type="password" required>
-                    <label class="lh-1 text-14 text-light-1">Confirm Password</label>
-                  </div>
-
-                </div>
-
-                <div class="col-12">
-
-                  <div class="d-flex ">
-                    <div class="form-checkbox mt-5">
-                      <input type="checkbox" name="name">
-                      <div class="form-checkbox__mark">
-                        <div class="form-checkbox__icon icon-check"></div>
-                      </div>
+                    <div class="form-input ">
+                      <input type="text" name="full_name" required>
+                      <label class="lh-1 text-14 text-light-1">Full Name</label>
                     </div>
 
-                    <div class="text-15 lh-15 text-light-1 ml-10">Email me exclusive Agoda promotions. I can opt out later as stated in the Privacy Policy.</div>
+                  </div>
+
+                  <div class="col-12">
+
+                    <div class="form-input ">
+                      <input type="text" name="phone" required>
+                      <label class="lh-1 text-14 text-light-1">Phone Number</label>
+                    </div>
 
                   </div>
 
+                  <div class="col-12">
+
+                    <div class="form-input ">
+                      <input type="text" name="email" required>
+                      <label class="lh-1 text-14 text-light-1">Email</label>
+                    </div>
+
+                  </div>
+
+                  <div class="col-12">
+
+                    <div class="form-input ">
+                      <input type="password" name="password" required>
+                      <label class="lh-1 text-14 text-light-1">Password</label>
+                    </div>
+
+                  </div>
+
+                  <div class="col-12">
+
+                    <div class="form-input ">
+                      <input type="password" name="confirm_password" required>
+                      <label class="lh-1 text-14 text-light-1">Confirm Password</label>
+                    </div>
+
+                  </div>
+
+                  <!-- User Role Dropdown -->
+                  <!-- <div class="select js-select js-liveSearch" data-select-value="">
+                    <button class="select__button js-button">
+                      <span class="js-button-title">User Role</span>
+                      <i class="select__icon" data-feather="chevron-down"></i>
+                    </button>
+      
+                    <div class="select__dropdown js-dropdown">
+                      <input style="display: none;" type="text" placeholder="Choose your role" class="select__search js-search">
+      
+                      <div class="select__options js-options">
+                        <div class="select__options__button" data-value="banking">Customer</div>
+                        <div class="select__options__button" data-value="digital & creative">Agent</div>
+                        <div class="select__options__button" data-value="retail">Hotel Vendor</div>
+                      </div>
+                    </div>
+                  </div> -->
+
+
+                  <!-- <div class="col-12">
+                    <div class="d-flex ">
+                      <div class="form-checkbox mt-5">
+                        <input type="checkbox" name="name">
+                        <div class="form-checkbox__mark">
+                          <div class="form-checkbox__icon icon-check"></div>
+                        </div>
+                      </div>
+                      <div class="text-15 lh-15 text-light-1 ml-10">Accept Terms and Policies</div>
+                    </div>
+                  </div> -->
+                  
+                  <div class="col-12">
+                    <!-- <button class="button py-20 -dark-1 bg-blue-1 text-white">Sign In</button> -->
+                    <a class="button py-20 -dark-1 bg-blue-1 text-white">
+                      Sign In <div class="icon-arrow-top-right ml-15"></div>
+                    </a>
+                  </div>
                 </div>
-
-                <div class="col-12">
-
-                  <a href="signup.html#" class="button py-20 -dark-1 bg-blue-1 text-white">
-                    Sign In <div class="icon-arrow-top-right ml-15"></div>
-                  </a>
-
-                </div>
-              </div>
+              </form>
+              
 
               <div class="row y-gap-20 pt-30">
                 <div class="col-12">
                   <div class="text-center">or sign in with</div>
 
                   <button class="button col-12 -outline-blue-1 text-blue-1 py-15 rounded-8 mt-10">
-                    <i class="icon-apple text-15 mr-10"></i>
+                    <i class="icon-facebook text-15 mr-10"></i>
                     Facebook
                   </button>
 
                   <button class="button col-12 -outline-red-1 text-red-1 py-15 rounded-8 mt-15">
-                    <i class="icon-apple text-15 mr-10"></i>
+                    <i class="icon-google text-15 mr-10"></i>
                     Google
                   </button>
 

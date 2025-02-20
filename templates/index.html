@@ -17,6 +17,45 @@
   <link href="{% static 'css/vendors.css' %}" rel="stylesheet">
 
   <title>GoTrip</title>
+
+  <style>
+    .menu-item-has-children {
+      position: relative;
+      display: inline-block;
+    }
+
+    .menu-item-has-children:hover .subnav {
+      display: block;
+    }
+
+    .subnav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 10px 0;
+      list-style: none;
+      z-index: 1000;
+    }
+
+    .subnav li {
+      padding: 10px 20px;
+    }
+
+    .subnav li a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .subnav li a:hover {
+        background: #f4f4f4;
+    }
+
+  </style>
 </head>
 
 <body>
@@ -718,10 +757,44 @@
               </div>
 
 
-              <div class="d-flex items-center ml-20 is-menu-opened-hide md:d-none">
-                <a href="{% url 'login' %}" class="button px-30 fw-400 text-14 -white bg-white h-50 text-dark-1">Become An Expert</a>
-                <a href="{% url 'register' %}" class="button px-30 fw-400 text-14 border-white -outline-white h-50 text-white ml-20">Sign In / Register</a>
+              <!-- User Role Dropdown -->
+              <div class="select js-select js-liveSearch" data-select-value="">
+                <button class=" js-button button px-30 fw-400 text-14 border-white -outline-white h-50 text-white ml-20">Sign In / Register
+                  <i class="select__icon" data-feather="chevron-down"></i>
+                </button>
+  
+                <div class="select__dropdown js-dropdown">
+                  <input style="display: none;" type="text" placeholder="Choose your role" class="select__search js-search">
+  
+                  <div class="select__options js-options">
+                    <a href="{% url 'signup' %}?role=3"><div class="select__options__button" data-value="customers">Customer</div></a>
+                    <a href="{% url 'signup' %}?role=1"><div class="select__options__button" data-value="agent">Agent</div></a>
+                    <a href="{% url 'signup' %}?role=2"><div class="select__options__button" data-value="vendor">Hotel Vendor</div></a>
+                  </div>
+                </div>
               </div>
+
+              
+              <!-- <div class="col-auto">
+                <div class="d-flex items-center">
+                  <div class="header-menu " data-x="mobile-menu" data-x-toggle="is-menu-active">
+                    <div class="menu js-navList">
+                      <div class="menu-item-has-children">
+                        <a href="#" class="button px-30 fw-400 text-14 border-white -outline-white h-50 text-white ml-20">
+                            Sign In / Register
+                        </a>
+                        <ul class="subnav">
+                          <li><a href="{% url 'signup' %}?role=3">Register as Customer</a></li>
+                          <li><a href="{% url 'signup' %}?role=1">Register as Agent</a></li>
+                          <li><a href="{% url 'signup' %}?role=2">Register as Hotel Vendor</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            
+            
 
               <div class="d-none xl:d-flex x-gap-20 items-center pl-30 text-white" data-x="header-mobile-icons" data-x-toggle="text-white">
                 <div><a href="login.html" class="d-flex items-center icon-user text-inherit text-22"></a></div>

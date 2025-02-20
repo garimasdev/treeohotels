@@ -594,6 +594,7 @@ button:focus {
 .button {
   display: flex;
   align-items: center;
+  margin-top: 30px;
   justify-content: center;
   vertical-align: middle;
   text-align: center;
