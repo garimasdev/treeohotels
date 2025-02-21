@@ -5,8 +5,8 @@ from django.contrib import messages
 from .models import User, UserRole
 from django.contrib.auth.hashers import check_password
 from django.urls import reverse
-from django.contrib.auth import login as django_login
-
+from django.contrib.auth import login
+from django.contrib.auth.forms import AuthenticationForm
 
 def register(request):
     if request.method == 'POST':
@@ -53,38 +53,39 @@ def register(request):
 
 def user_login(request):
     if request.method == 'POST':
-        email = request.POST.get('email')
-        password = request.POST.get('password')
         try:
-            user = User.objects.get(email=email)
-            if not check_password(password, user.password):
-                messages.error(request, "Invalid email or password.")
-            django_login(request, user)
-            # customer user role
-            if user.role.user_type == 3:
-                # return redirect(reverse('db-dashboard'))
-                return redirect(reverse('dashboard:db-dashboard'))
-            else:
-                # vendor and agent user
-                return redirect('dashboard:db-vendor-dashboard')
+            email = request.POST.get('email')
+            password = request.POST.get('password')
+
+            user = User.objects.filter(email=email).first()
+            # Check if password matches
+            if user.check_password(password):
+                # user ID in session
+                request.session['user_id'] = user.id
+
+                if user.role.user_type == 3:
+                    return redirect('dashboard:db-dashboard')
+                else: 
+                    return redirect('dashboard:db-vendor-dashboard') 
         except:
             traceback.print_exc()
     return render(request, 'login.html')
 
 
-
     # if request.method == 'POST':
     #     try:
-    #         email = request.POST.get('email')
+    #         email = request.POST.get('username')
     #         password = request.POST.get('password')
-    #         user = authenticate(request, email=email, password=password)
+    #         print(email,password)
+    #         user = authenticate(request, username=email, password=password)
+    #         print(user)
     #         if user is None:
     #             print("Authentication failed! User not found.")
     #             return render(request, 'login.html')
     #         login(request, user)
     #         messages.success(request, "Logged in successfully!")
     #         if user.role.user_type == 3:  # Customer
-    #             return redirect('db-dashboard')
+    #             return redirect('index.html')
     #         else:  # Agent or Vendor
     #             return redirect('db-vendor-dashboard')
     #     except:

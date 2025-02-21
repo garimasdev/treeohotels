@@ -24,6 +24,6 @@ urlpatterns = [
     path('', views.index, name='index'),
 
     path('users/', include('users.urls')),
-    path('dashboard/', include('dashboard.urls', namespace='dashboard')),
+    path('dashboard/', include('dashboard.urls')),
 
 ]
