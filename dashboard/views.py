@@ -4,7 +4,6 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from hotels.models import *
-import pandas as pd
 
 
 
@@ -18,8 +17,18 @@ def customer_dashboard(request):
 # vendor or agent dashboard 
 @login_required
 def vendor_dashboard(request):
-    return render(request, 'db-vendor-add-hotel.html')
+    return render(request, 'db-vendor-dashboard.html')
 
+
+
+
+"""
+VENDOR HOTEL DASHBOARD SERVICE
+"""
+
+@login_required
+def vendor_hotel(request):
+    return render(request, 'db-vendor-add-hotel.html')
 
 
 @login_required
@@ -169,3 +178,14 @@ def update_hotel_services(request):
             traceback.print_exc()
     else:
         return render(request, "db-vendor-add-hotel.html")
+
+
+
+
+
+"""
+VENDOR ROOM DASHBOARD SERVICE
+"""
+@login_required
+def vendor_room(request):
+    return render(request, 'db-vendor-add-room.html')

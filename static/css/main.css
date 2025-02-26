@@ -5798,6 +5798,10 @@ div[data-slider] > input[type=range]::-ms-tooltip {
   margin-right: 35px !important;
 }
 
+.mr-150 {
+  margin-right: 150px !important;
+}
+
 .py-40 {
   padding-top: 40px !important;
   padding-bottom: 40px !important;

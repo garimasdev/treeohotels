@@ -160,9 +160,27 @@
 
         <div class="sidebar__item">
           <div class="sidebar__button -is-active">
-            <a href="db-dashboard.html" class="d-flex items-center text-15 lh-1 fw-500">
+            <a href="{% url 'dashboard:db-vendor-dashboard' %}" class="d-flex items-center text-15 lh-1 fw-500">
               <img src="static/images/dashboard/sidebar/compass.svg" alt="image" class="mr-15">
               Dashboard
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar__item">
+          <div class="sidebar__button -is-active">
+            <a href="{% url 'dashboard:db-vendor-add-hotel' %}" class="d-flex items-center text-15 lh-1 fw-500">
+              <img src="static/images/dashboard/sidebar/compass.svg" alt="image" class="mr-15">
+              Add Hotel
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar__item">
+          <div class="sidebar__button -is-active">
+            <a href="{% url 'dashboard:db-vendor-add-room' %}" class="d-flex items-center text-15 lh-1 fw-500">
+              <img src="static/images/dashboard/sidebar/compass.svg" alt="image" class="mr-15">
+              Add Room
             </a>
           </div>
         </div>
