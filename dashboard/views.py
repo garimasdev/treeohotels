@@ -86,12 +86,10 @@ def add_hotel_pricing(request):
     if request.method == 'POST':
         try:
             hotel_id = request.session.get('hotel_id')
-            print('id', hotel_id)
             try:
                 hotel = Hotel.objects.get(id=hotel_id)
             except Hotel.DoesNotExist:
                 return JsonResponse({'error': 'Hotel not found'}, status=404)
-
 
             hotel_price = request.POST.get('hotel_price')
             check_in_time = request.POST.get('check_in_time')
@@ -99,26 +97,75 @@ def add_hotel_pricing(request):
             min_advance_reservations = request.POST.get('min_advance_reservations')
             min_day_stay_requirements = request.POST.get('min_day_stay_requirements')
 
-            
-            # hotel = Hotel.objects.get(id=hotel_id)
-
-            # Save the data to the hotel object
-            pricing, created = HotelPricing.objects.get_or_create(
+            # Update existing or create a new pricing entry
+            pricing, created = HotelPricing.objects.update_or_create(
                 hotel=hotel,
-                price=hotel_price,
-                check_in_time=check_in_time,
-                check_out_time=check_out_time,
-                min_advance_reservations=min_advance_reservations,
-                min_day_stay_requirements=min_day_stay_requirements
+                defaults={
+                    'price': hotel_price,
+                    'check_in_time': check_in_time,
+                    'check_out_time': check_out_time,
+                    'minimum_advance_reservations': min_advance_reservations,
+                    'minimum_day_stay_requirements': min_day_stay_requirements
+                }
             )
-            pricing.save()
 
-            if created:
-                return JsonResponse({'message': 'Hotel pricing details created successfully'})
-            else:
-                return JsonResponse({'message': 'Hotel pricing details updated successfully'})
+            return JsonResponse({'message': 'Hotel pricing details saved successfully', 'created': created})
+
         except:
             traceback.print_exc()
     else:
         return render(request, "db-vendor-add-hotel.html")
 
+
+
+
+@login_required
+def update_hotel_services(request):
+    # Retrieve hotel ID from session
+    hotel_id = request.session.get('hotel_id')
+
+    if hotel_id:
+        try:
+            # Retrieve or create HotelServices object
+            hotel_services, created = HotelServices.objects.get_or_create(hotel_id=hotel_id)
+
+            # Update the fields based on the form submission
+            hotel_services.apartment = 'apartment' in request.POST
+            hotel_services.boat = 'boat' in request.POST
+            hotel_services.holiday_home = 'holiday_home' in request.POST
+            hotel_services.villa = 'villa' in request.POST
+            hotel_services.cabin = 'cabin' in request.POST
+            hotel_services.hostel = 'hostel' in request.POST
+            hotel_services.lodge = 'lodge' in request.POST
+            hotel_services.mansion = 'mansion' in request.POST
+            hotel_services.banquet = 'banquet' in request.POST
+
+            # Facilities
+            hotel_services.swimming_pool = 'swimming_pool' in request.POST
+            hotel_services.gym = 'gym' in request.POST
+            hotel_services.spa = 'spa' in request.POST
+            hotel_services.parking = 'parking' in request.POST
+            hotel_services.restaurant = 'restaurant' in request.POST
+            hotel_services.bar = 'bar' in request.POST
+            hotel_services.free_wifi = 'free_wifi' in request.POST
+            hotel_services.conference_room = 'conference_room' in request.POST
+
+            # Hotel Services
+            hotel_services.room_service = 'room_service' in request.POST
+            hotel_services.cleaning_service = 'cleaning_service' in request.POST
+            hotel_services.laundry_service = 'laundry_service' in request.POST
+            hotel_services.shuttle_service = 'shuttle_service' in request.POST
+            hotel_services.concierge_service = 'concierge_service' in request.POST
+            hotel_services.hour24_reception = 'hour24_reception' in request.POST
+
+            # Save the updated services
+            hotel_services.save()
+
+            if created:
+                return JsonResponse({'message': 'Hotel services created successfully!'})
+            else:
+                return JsonResponse({'message': 'Hotel services updated successfully!'})
+        except:
+            traceback.print_exc()
+    else:
+        return render(request, "db-vendor-add-hotel.html")

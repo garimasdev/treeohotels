@@ -12,4 +12,5 @@ urlpatterns = [
     path('add-hotel/', add_hotel, name='add-hotel'),
     path('add-hotel-location/', add_hotel_location, name='add-hotel-location'),
     path('add-hotel-pricing/', add_hotel_pricing, name='add-hotel-pricing'),
+    path('update-hotel-services/', update_hotel_services, name='update-hotel-services'),
 ]

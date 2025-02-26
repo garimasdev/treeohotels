@@ -74,6 +74,7 @@ class HotelServices(models.Model):
     hostel = models.BooleanField(default=False)
     lodge = models.BooleanField(default=False)
     mansion = models.BooleanField(default=False)
+    banquet = models.BooleanField(default=False)
 
     # facilities
     swimming_pool = models.BooleanField(default=False)
