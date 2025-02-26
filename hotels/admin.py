@@ -4,6 +4,10 @@ from .models import *
 # Register your models here.
 
 admin.site.register(Hotel)
+admin.site.register(HotelImage)
+admin.site.register(HotelPricing)
+admin.site.register(HotelServices)
+admin.site.register(HotelPolicy)
 admin.site.register(HotelReview)
 admin.site.register(Room)
 admin.site.register(RoomImage)

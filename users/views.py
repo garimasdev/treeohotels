@@ -1,12 +1,9 @@
 import traceback
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, logout
+from django.contrib.auth import authenticate, logout, login
 from django.contrib import messages
 from .models import User, UserRole
 from django.contrib.auth.hashers import check_password
-from django.urls import reverse
-from django.contrib.auth import login
-from django.contrib.auth.forms import AuthenticationForm
 
 def register(request):
     if request.method == 'POST':
@@ -72,31 +69,11 @@ def user_login(request):
     return render(request, 'login.html')
 
 
-    # if request.method == 'POST':
-    #     try:
-    #         email = request.POST.get('username')
-    #         password = request.POST.get('password')
-    #         print(email,password)
-    #         user = authenticate(request, username=email, password=password)
-    #         print(user)
-    #         if user is None:
-    #             print("Authentication failed! User not found.")
-    #             return render(request, 'login.html')
-    #         login(request, user)
-    #         messages.success(request, "Logged in successfully!")
-    #         if user.role.user_type == 3:  # Customer
-    #             return redirect('index.html')
-    #         else:  # Agent or Vendor
-    #             return redirect('db-vendor-dashboard')
-    #     except:
-    #         traceback.print_exc()
-    # return render(request, 'login.html')
-
 
 
 def logout(request):
-    logout(request)
     messages.success(request, "Logged out successfully!")
+    request.session.flush()
     return redirect('login')
 
 

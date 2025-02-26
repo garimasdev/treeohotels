@@ -1134,6 +1134,46 @@ button:focus {
   color: var(--color-dark-1) !important;
 }
 
+/* signup subnav */
+.menu-item-has-children {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-item-has-children:hover .subnav {
+  display: block;
+}
+
+.subnav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px 0;
+  list-style: none;
+  z-index: 1000;
+}
+
+.subnav li {
+  padding: 10px 20px;
+}
+
+.subnav li a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.subnav li a:hover {
+    background: #f4f4f4;
+}
+
+/* end subnav */
+
+
 .contact-form select,
 .contact-form input:not([type="range"]),
 .contact-form textarea {
