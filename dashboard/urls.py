@@ -19,5 +19,9 @@ urlpatterns = [
 
     # ADD room dashboard api
     path('vendor_room/', vendor_room, name='db-vendor-add-room'),
+    path("add-room/", add_room, name="add-room"),
+    path('get/amenities/', get_amenities, name='get_amenities'),
+    path("save-room-amenities/", save_room_amenities, name="save_room_amenities"),
+
 
 ]

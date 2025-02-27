@@ -97,14 +97,32 @@ class HotelServices(models.Model):
 
 
 
+
+
+class AmenityCategory(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Amenity(models.Model):
+    category = models.ForeignKey(AmenityCategory, on_delete=models.CASCADE, related_name="amenities")
+    name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return f"{self.category.name} - {self.name}"
+
+
 class Room(models.Model):
     hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE, related_name="rooms")
     room_type = models.CharField(max_length=100)  # Example: Deluxe, Suite, Standard
-    price_per_night = models.DecimalField(max_digits=10, decimal_places=2)
-    total_rooms = models.PositiveIntegerField()
-    available_rooms = models.PositiveIntegerField()
-    amenities = models.TextField(blank=True, null=True)  # List of room amenities
+    price_per_night = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    available_rooms = models.PositiveIntegerField(blank=True, null=True)
+    sleeps = models.PositiveIntegerField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    amenities = models.ManyToManyField(Amenity, blank=True)
+
 
     def __str__(self):
         return f"{self.room_type} - {self.hotel.name}"
@@ -114,7 +132,6 @@ class Room(models.Model):
 class RoomImage(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="images")
     image = models.ImageField(upload_to="room_images/")
-    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"Image for {self.room.room_type} - {self.room.hotel.name}"

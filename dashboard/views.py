@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from hotels.models import *
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 
 
@@ -189,3 +191,77 @@ VENDOR ROOM DASHBOARD SERVICE
 @login_required
 def vendor_room(request):
     return render(request, 'db-vendor-add-room.html')
+
+
+
+# add room details
+def add_room(request):
+    if request.method == "POST":
+        try:
+            # hotel = Hotel.objects.get(vendor=request.user)
+            hotel_id = request.session.get('hotel_id')  # Retrieve hotel_id from session
+            print(hotel_id)
+
+            hotel = Hotel.objects.filter(id=hotel_id, vendor=request.user).first()
+            print(hotel)
+            room_type = request.POST.get("room_type")
+            price_per_night = request.POST.get("room_price")
+            available_rooms = request.POST.get("available_rooms")
+            sleeps = request.POST.get("sleeps")
+
+            # Create the room entry
+            room = Room.objects.create(
+                hotel=hotel,
+                room_type=room_type,
+                price_per_night=price_per_night,
+                available_rooms=available_rooms,
+                sleeps=sleeps
+            )
+
+            # Handle multiple image uploads
+            images = request.FILES.getlist("room_images")
+            for img in images:
+                RoomImage.objects.create(room=room, image=img)
+
+            return JsonResponse({"message": "Room added successfully", "room_id": room.id}, status=201)
+
+        except:
+            traceback.print_exc()
+
+    return JsonResponse({"error": "Invalid request method"}, status=405)
+
+
+
+
+
+def get_amenities(request):
+    categories = AmenityCategory.objects.prefetch_related('amenities').all()
+    
+    data = {
+        "amenities": {
+            category.name: [{"id": amenity.id, "name": amenity.name} for amenity in category.amenities.all()]
+            for category in categories
+        }
+    }
+    return JsonResponse(data)
+
+
+
+@login_required
+@csrf_exempt
+def save_room_amenities(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            room_id = data.get("room_id")
+            selected_amenities = data.get("amenities", [])  # List of selected amenity IDs
+            # Ensure the vendor owns the room
+            room = Room.objects.get(id=room_id, hotel__vendor=request.user)
+            # Update amenities for the room
+            room.amenities.set(selected_amenities)  # ManyToManyField set() updates the relation
+
+            return JsonResponse({"message": "Amenities updated successfully"}, status=200)
+        
+        except:
+            traceback.print_exc()
+    return JsonResponse({"error": "Invalid request method"}, status=405)
