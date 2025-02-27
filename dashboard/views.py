@@ -198,12 +198,9 @@ def vendor_room(request):
 def add_room(request):
     if request.method == "POST":
         try:
-            # hotel = Hotel.objects.get(vendor=request.user)
-            hotel_id = request.session.get('hotel_id')  # Retrieve hotel_id from session
-            print(hotel_id)
-
+            # fetch hotel id from session
+            hotel_id = request.session.get('hotel_id')
             hotel = Hotel.objects.filter(id=hotel_id, vendor=request.user).first()
-            print(hotel)
             room_type = request.POST.get("room_type")
             price_per_night = request.POST.get("room_price")
             available_rooms = request.POST.get("available_rooms")
