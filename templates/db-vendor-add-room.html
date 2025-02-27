@@ -263,8 +263,8 @@
             <form id="RoomForm" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="tabs__pane -tab-item-1 is-tab-el-active">
-                <div class="col-xl-10">
-                <div class="mt-20">
+                <div class="col-xl-10" id="room-form-container">
+                <div class="room-form mt-20">
                     <div class="fw-500 mb-20">Room Details</div>
 
                     <div class="overflow-scroll scroll-bar-1">
@@ -332,10 +332,10 @@
                     </div>
 
                     <div class="d-flex justify-end">
-                    <button class="button -md -blue-1 bg-blue-1-05 text-blue-1 mt-0">Add Room</button>
+                    <button class="button -md -blue-1 bg-blue-1-05 text-blue-1 mt-0 add-room-btn">Add Room</button>
                     </div>
                     <div class="d-flex justify-end">
-                    <button class="button -md -red-1 bg-blue-1-05 text-blue-1 mr-150" style="margin-top:-48px">Delete Room</button>
+                    <button class="button -md -red-1 bg-blue-1-05 text-blue-1 mr-150 delete-room-btn" style="margin-top:-48px">Delete Room</button>
                     </div>
                 </div>
                 </div>
@@ -422,7 +422,40 @@
 <script src="{% static 'js/main.js' %}"></script>
     
   
-<!-- add room -->
+
+<!-- add & delete room -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Function to clone the room form
+      const roomFormContainer = document.getElementById('room-form-container');
+      
+      document.querySelector('.add-room-btn').addEventListener('click', function() {
+          // Clone the existing room form and reset input values
+          const newRoomForm = roomFormContainer.querySelector('.room-form').cloneNode(true);
+
+          // Reset all form fields in the cloned room
+          const inputs = newRoomForm.querySelectorAll('input');
+          inputs.forEach(input => input.value = '');
+
+          // Append the new room form to the container
+          roomFormContainer.appendChild(newRoomForm);
+      });
+
+      // Function to delete the room form
+      roomFormContainer.addEventListener('click', function(event) {
+          if (event.target.classList.contains('delete-room-btn')) {
+              const roomForm = event.target.closest('.room-form');
+              if (roomForm && roomFormContainer.children.length > 1) {
+                  roomFormContainer.removeChild(roomForm);  // Remove the room form
+              }
+          }
+      });
+  });
+</script>
+
+
+
+<!-- add room details -->
 <script>
     document.getElementById("RoomForm").addEventListener("submit", function (event) {
     event.preventDefault();
