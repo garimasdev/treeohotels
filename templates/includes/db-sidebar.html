@@ -1,0 +1,42 @@
+{% load static %}
+
+<div class="dashboard__sidebar bg-white scroll-bar-1">
+    <div class="sidebar -dashboard">
+
+      <div class="sidebar__item">
+        <div class="sidebar__button -is-active">
+          <button onclick="window.location.href='{% url 'dashboard:db-vendor-dashboard' %}'" class="d-flex items-center text-15 lh-1 fw-500">
+            <img src="{% static '/images/dashboard/sidebar/compass.svg' %}" alt="image" class="mr-15">
+            Dashboard
+          </button>
+        </div>
+      </div>
+
+      <div class="sidebar__item">
+        <div class="sidebar__button -is-active">
+          <button onclick="window.location.href='{% url 'dashboard:db-vendor-add-hotel' %}'" class="d-flex items-center text-15 lh-1 fw-500">
+            <img src="{% static '/images/dashboard/sidebar/compass.svg' %}" alt="image" class="mr-15">
+            Add Hotel
+          </button>
+        </div>
+      </div>
+
+      <div class="sidebar__item">
+        <div class="sidebar__button -is-active">
+          <button onclick="window.location.href='{% url 'dashboard:db-vendor-add-room' %}'" class="d-flex items-center text-15 lh-1 fw-500">
+            <img src="{% static '/images/dashboard/sidebar/compass.svg' %}" alt="image" class="mr-15">
+            Add Room
+          </button>
+        </div>
+      </div>
+
+      <div class="sidebar__item">
+        <div class="sidebar__button ">
+          <button onclick="window.location.href='{% url 'logout' %}'" class="d-flex items-center text-15 lh-1 fw-500">
+            <img src="{% static '/images/dashboard/sidebar/log-out.svg' %}" alt="image" class="mr-15">
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
