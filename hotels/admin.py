@@ -5,7 +5,6 @@ from .models import *
 
 admin.site.register(Hotel)
 admin.site.register(HotelImage)
-admin.site.register(HotelPricing)
 admin.site.register(HotelServices)
 admin.site.register(HotelPolicy)
 admin.site.register(Amenity)

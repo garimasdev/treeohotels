@@ -17,7 +17,7 @@ def customer_dashboard(request):
 
 
 # vendor or agent dashboard 
-@login_required
+# @login_required
 def vendor_dashboard(request):
     return render(request, 'db-vendor-dashboard.html')
 
@@ -41,7 +41,7 @@ def add_hotel(request):
             hotel_name = request.POST.get("hotel_name")
             description = request.POST.get("description")
             youtube_video = request.POST.get("youtube_video")
-            hotel_rating = request.POST.get("hotel_rating")
+            hotel_rating = request.POST.get("rating")
 
             # Handle image uploads
             banner_image = request.FILES.get("banner_image")
@@ -108,19 +108,16 @@ def add_hotel_pricing(request):
             min_advance_reservations = request.POST.get('min_advance_reservations')
             min_day_stay_requirements = request.POST.get('min_day_stay_requirements')
 
-            # Update existing or create a new pricing entry
-            pricing, created = HotelPricing.objects.update_or_create(
-                hotel=hotel,
-                defaults={
-                    'price': hotel_price,
-                    'check_in_time': check_in_time,
-                    'check_out_time': check_out_time,
-                    'minimum_advance_reservations': min_advance_reservations,
-                    'minimum_day_stay_requirements': min_day_stay_requirements
-                }
-            )
 
-            return JsonResponse({'message': 'Hotel pricing details saved successfully', 'created': created})
+            # Update the hotel pricing details (directly on the Hotel model)
+            hotel.price = hotel_price
+            hotel.check_in_time = check_in_time
+            hotel.check_out_time = check_out_time
+            hotel.minimum_advance_reservations = min_advance_reservations
+            hotel.minimum_day_stay_requirements = min_day_stay_requirements
+            hotel.save()
+
+            return JsonResponse({'message': 'Hotel pricing details saved successfully'})
 
         except:
             traceback.print_exc()
