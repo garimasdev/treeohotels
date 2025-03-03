@@ -17,7 +17,12 @@ def hotel_list(request):
     return render(request, 'hotel-grid-2.html')
 
 
-def get_hotel_list(request):
+
+def hotel_list(request):
     hotels = Hotel.objects.all()
     return render(request, 'hotel-grid-2.html', {'hotels': hotels})
+
+
+def get_hotel(request):
+    return render(request, 'hotel-single-1.html')
 
